@@ -1,0 +1,21 @@
+﻿<Window x:Class="WpfDesk.ClientsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Clients" Height="641.3" Width="526" Loaded="ClientsWindow_OnLoaded">
+    <Grid>
+        <TreeView Name="ClientsTreeView" HorizontalAlignment="Left" Height="591" Margin="10,10,0,0" VerticalAlignment="Top" Width="311">
+            <TreeViewItem Header="All Clients">
+                <TreeViewItem Header="Client1">
+                    <TreeViewItem Header="Account1_1"></TreeViewItem>
+                    <TreeViewItem Header="Account1_2"></TreeViewItem>
+                    <TreeViewItem Header="Account1_3"></TreeViewItem>
+                </TreeViewItem>
+                <TreeViewItem Header="Client2">
+                    <TreeViewItem Header="Account2_1"></TreeViewItem>
+                    <TreeViewItem Header="Account2_2"></TreeViewItem>
+                    <TreeViewItem Header="Account2_3"></TreeViewItem>
+                </TreeViewItem>
+            </TreeViewItem>
+        </TreeView>
+    </Grid>
+</Window>
