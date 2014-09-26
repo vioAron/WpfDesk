@@ -5,7 +5,7 @@ namespace WpfDesk
     /// <summary>
     /// Interaction logic for ClientsWindow.xaml
     /// </summary>
-    public partial class ClientsWindow : Window
+    public partial class ClientsWindow
     {
         public ClientsWindow()
         {
@@ -13,8 +13,6 @@ namespace WpfDesk
         }
 
         private void ClientsWindow_OnLoaded(object sender, RoutedEventArgs e)
-        {
-            
-        }
+        { }
     }
 }
