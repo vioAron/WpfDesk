@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using WpfDesk.View;
 
 namespace WpfDesk
 {
@@ -13,7 +14,9 @@ namespace WpfDesk
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
+            
             _clientsWindow = new ClientsWindow();
+
             _clientsWindow.Show();
         }
     }

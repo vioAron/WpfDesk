@@ -1,6 +1,7 @@
 ﻿using System.Windows;
+using WpfDesk.ViewModel;
 
-namespace WpfDesk
+namespace WpfDesk.View
 {
     /// <summary>
     /// Interaction logic for ClientsWindow.xaml
@@ -13,6 +14,8 @@ namespace WpfDesk
         }
 
         private void ClientsWindow_OnLoaded(object sender, RoutedEventArgs e)
-        { }
+        {
+            DataContext = new ClientsViewModel();
+        }
     }
 }
