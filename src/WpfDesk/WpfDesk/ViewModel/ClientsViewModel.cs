@@ -10,6 +10,8 @@ namespace WpfDesk.ViewModel
 
         public ClientsViewModel()
         {
+            ClientViewModels = new ObservableCollection<ClientViewModel>();
+
             LoadClients();
         }
 

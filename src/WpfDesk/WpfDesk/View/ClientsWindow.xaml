@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
-        xmlns:vm="clr-namespace:WpfDesk.ViewModel" xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:vm="clr-namespace:WpfDesk.ViewModel"
         Title="Clients" Height="641.3" Width="646" Loaded="ClientsWindow_OnLoaded" Padding="0.5">
     <Window.DataContext>
         <vm:ClientsViewModel/>
@@ -15,18 +15,23 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.Resources>
-            <CollectionViewSource x:Key="Clients" Source="{Binding Path=ClientViewModels}"></CollectionViewSource>
+            <DataTemplate DataType="{x:Type vm:AccountViewModel}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding Path=Id}"></TextBlock>
+                    <TextBlock Text="{Binding Path=Description}"></TextBlock>
+                </StackPanel>
+            </DataTemplate>
         </Grid.Resources>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <TreeView Name="ClientsTreeView" Margin="10" ItemsSource="{Binding ClientViewModels}">
-                <TreeView.ItemTemplate>
-                    <DataTemplate>
+                <TreeView.Resources>
+                    <HierarchicalDataTemplate DataType="{x:Type vm:ClientViewModel}" ItemsSource="{Binding AccountViewModels}">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Path=Id}"></TextBlock>
-                            <TextBlock Text="{Binding Path=Description}"></TextBlock>
+                            <TextBlock Text="{Binding Id}"></TextBlock>
+                            <TextBlock Text="{Binding Description}"></TextBlock>
                         </StackPanel>
-                    </DataTemplate>
-                </TreeView.ItemTemplate>
+                    </HierarchicalDataTemplate>
+                </TreeView.Resources>
             </TreeView>
         </ScrollViewer>
         <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
