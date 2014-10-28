@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Media;
 using WpfDesk.View;
+using WpfDesk.ViewModel;
 
 namespace WpfDesk
 {
@@ -17,7 +18,7 @@ namespace WpfDesk
 
         void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            LblRendering.Content = RenderCapability.Tier >> 16;
+            DataContext = new MainViewModel();
         }
         
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
