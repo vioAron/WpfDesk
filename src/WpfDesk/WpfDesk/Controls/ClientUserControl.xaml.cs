@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel;
-using System.Windows;
 using System.Windows.Controls;
 using WpfDesk.Model;
 using WpfDesk.TypeConverters;
@@ -28,9 +27,5 @@ namespace WpfDesk.Controls
                 DataContext = _client;
             }
         }
-
-        //public static readonly DependencyProperty ClientProperty =
-        //    DependencyProperty.Register("Client", typeof(string), typeof(Client),
-        //    new PropertyMetadata(null));
     }
 }
