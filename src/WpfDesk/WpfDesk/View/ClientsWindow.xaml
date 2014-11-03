@@ -3,32 +3,32 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
-        xmlns:vm="clr-namespace:WpfDesk.ViewModel"
-        Title="Clients" Height="641.3" Width="646" Loaded="ClientsWindow_OnLoaded" Padding="0.5">
-    <Window.DataContext>
-        <vm:ClientsViewModel/>
-    </Window.DataContext>
-    <Grid>
+        xmlns:viewModel="clr-namespace:WpfDesk.ViewModel"
+        Title="Clients" Height="641.3" Width="646">
+    <Window.Resources>
+        <viewModel:ClientsViewModel x:Key="clientsViewModel" />
+    </Window.Resources>
+    <Grid DataContext="{StaticResource clientsViewModel}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="5"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.Resources>
-            <DataTemplate DataType="{x:Type vm:AccountViewModel}">
+            <DataTemplate DataType="{x:Type viewModel:AccountViewModel}">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="{Binding Path=Id}" Padding="5,0"></TextBlock>
-                    <TextBlock Text="{Binding Path=Description}" Padding="5,0"></TextBlock>
+                    <TextBlock Text="{Binding Path=Id}" Margin="5,0"></TextBlock>
+                    <TextBlock Text="{Binding Path=Description}" Margin="5,0"></TextBlock>
                 </StackPanel>
             </DataTemplate>
         </Grid.Resources>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <TreeView Name="ClientsTreeView" Margin="10" ItemsSource="{Binding ClientViewModels}">
                 <TreeView.Resources>
-                    <HierarchicalDataTemplate DataType="{x:Type vm:ClientViewModel}" ItemsSource="{Binding AccountViewModels}">
+                    <HierarchicalDataTemplate DataType="{x:Type viewModel:ClientViewModel}" ItemsSource="{Binding AccountViewModels}">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Id}" Padding="5,0"></TextBlock>
-                            <TextBlock Text="{Binding Description}" Padding="5,0"></TextBlock>
+                            <TextBlock Text="{Binding Path=Id}" Margin="5,0"></TextBlock>
+                            <TextBlock Text="{Binding Description}" Margin="5,0"></TextBlock>
                         </StackPanel>
                     </HierarchicalDataTemplate>
                 </TreeView.Resources>

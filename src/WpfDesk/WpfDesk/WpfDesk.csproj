@@ -53,6 +53,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Command\ShowClientsCommand.cs" />
     <Compile Include="Controls\ClientUserControl.xaml.cs">
       <DependentUpon>ClientUserControl.xaml</DependentUpon>
     </Compile>
