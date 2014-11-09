@@ -62,6 +62,15 @@
     <Compile Include="ViewModel\AccountViewModel.cs" />
     <Compile Include="ViewModel\ClientsViewModel.cs" />
     <Compile Include="ViewModel\ClientViewModel.cs" />
+    <Compile Include="View\FlowDocumentWindow.xaml.cs">
+      <DependentUpon>FlowDocumentWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RoundWindow.xaml.cs">
+      <DependentUpon>RoundWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VisualTreeBuilderWindow.xaml.cs">
+      <DependentUpon>VisualTreeBuilderWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="Controls\ClientUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -90,6 +99,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\FlowDocumentWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RoundWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VisualTreeBuilderWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Client.cs" />
