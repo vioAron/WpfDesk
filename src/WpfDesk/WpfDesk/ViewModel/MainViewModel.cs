@@ -15,6 +15,14 @@ namespace WpfDesk.ViewModel
             }
         }
 
+        public ICommand CloseCommand
+        {
+            get
+            {
+                return ApplicationCommands.Close;
+            }
+        }
+
         public int RenderCapabilityValue
         {
             get
@@ -23,11 +31,28 @@ namespace WpfDesk.ViewModel
             }
         }
 
+        public ICommand AddClientClickCommand
+        {
+            get { return new AddClientClickCommand(); }
+        }
+
         public void ShowClients()
         {
             var clientsWindow = new ClientsWindow();
 
             clientsWindow.Show();
+        }
+
+        public void AddClient()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void ShowAddClient()
+        {
+            var addClientWindow = new AddClientWindow();
+
+            addClientWindow.ShowDialog();
         }
     }
 }

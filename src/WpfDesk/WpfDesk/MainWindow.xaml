@@ -3,20 +3,34 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
         xmlns:viewModel="clr-namespace:WpfDesk.ViewModel"
         xmlns:controls="clr-namespace:WpfDesk.Controls" x:Class="WpfDesk.MainWindow"
+    xmlns:media="System.Windows.Input.MediaCommands"
         Title="WpfDesk" Height="350" Width="525">
     <Window.Resources>
         <viewModel:MainViewModel x:Key="mainViewModel"/>
     </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="Close" Executed="CommandBinding_OnExecuted"></CommandBinding>
+    </Window.CommandBindings>
     <StackPanel Orientation="Horizontal" DataContext="{StaticResource mainViewModel}">
         <StackPanel>
             <Button Content="Clients" HorizontalAlignment="Left" Margin="20" VerticalAlignment="Top" Width="75" 
                     Command="{Binding Path=ClientsClickCommand}" CommandParameter="{Binding}"/>
+            <Button Content="Add Client" HorizontalAlignment="Left" Margin="20" VerticalAlignment="Top" Width="75" 
+                    Command="{Binding Path=AddClientClickCommand}" CommandParameter="{Binding}"/>
+            <Button Content="Close" HorizontalAlignment="Left" Margin="20" VerticalAlignment="Top" Width="75"
+                    Command="{Binding CloseCommand}" CommandParameter="{Binding}"/>
             <StackPanel Orientation="Horizontal">
                 <Label Content="RenderCapability:"/>
                 <Label Content="{Binding RenderCapabilityValue}"/>
                 <Line/>
                 <TextBlock/>
             </StackPanel>
+        </StackPanel>
+        <StackPanel>
+            <Menu>
+                <MenuItem Command="Paste"></MenuItem>
+            </Menu>
+            <TextBox/>
         </StackPanel>
         <!--controls:ClientUserControl Width="100" Background="AntiqueWhite">
             <controls:ClientUserControl.Client>Id111,Id111_IsGreat!</controls:ClientUserControl.Client>

@@ -1,14 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using WpfDesk.MVVM.Infrastructure;
 using WpfDesk.Model;
 
 namespace WpfDesk.ViewModel
 {
-    public class ClientViewModel
+    public class ClientViewModel : ViewModelBase
     {
         private readonly Client _client;
 
-        public string Id { get { return _client.Id; } }
+        [Required]
+        public string Id
+        {
+            get { return GetValue(() => _client.Id); }
+            set { SetValue(() => _client.Id, value); }
+        }
 
         public string Description { get { return _client.Description; } }
 
@@ -22,6 +29,7 @@ namespace WpfDesk.ViewModel
                 throw new ArgumentNullException("accountViewModels");
 
             _client = client;
+
             AccountViewModels = accountViewModels;
         }
 
