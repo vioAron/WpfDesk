@@ -16,9 +16,9 @@
         </Grid.ColumnDefinitions>
         <Grid.Resources>
             <DataTemplate DataType="{x:Type viewModel:AccountViewModel}">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="{Binding Path=Id}" Margin="5,0"></TextBlock>
-                    <TextBlock Text="{Binding Path=Description}" Margin="5,0"></TextBlock>
+                <StackPanel Orientation="Horizontal" Background="Bisque">
+                    <TextBlock Text="{Binding Path=Id}" Margin="5,0" Background="Aquamarine"></TextBlock>
+                    <TextBlock Text="{Binding Path=Description}" Margin="5,0" Background="BurlyWood"></TextBlock>
                 </StackPanel>
             </DataTemplate>
         </Grid.Resources>
@@ -27,8 +27,8 @@
                 <TreeView.Resources>
                     <HierarchicalDataTemplate DataType="{x:Type viewModel:ClientViewModel}" ItemsSource="{Binding AccountViewModels}">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Path=Id}" Margin="5,0"></TextBlock>
-                            <TextBlock Text="{Binding Description}" Margin="5,0"></TextBlock>
+                            <TextBlock Text="{Binding Path=Id}" Margin="5,0" Foreground="Chartreuse"></TextBlock>
+                            <TextBlock Text="{Binding Description}" Margin="5,0" Foreground="Chartreuse"></TextBlock>
                         </StackPanel>
                     </HierarchicalDataTemplate>
                 </TreeView.Resources>
