@@ -4,7 +4,7 @@ using WpfDesk.MVVM.Infrastructure;
 
 namespace WpfDesk.ViewModel
 {
-    public class AddClietViewModel : ViewModelBase
+    public class AddClientViewModel : ViewModelBase
     {
         public ICommand AddClient
         {

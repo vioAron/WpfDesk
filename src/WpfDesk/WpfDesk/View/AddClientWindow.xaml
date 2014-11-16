@@ -4,7 +4,7 @@
         xmlns:viewModel="clr-namespace:WpfDesk.ViewModel"
         Title="AddClientWindow" Height="300" Width="300">
     <Window.DataContext>
-        <viewModel:AddClietViewModel/>
+        <viewModel:AddClientViewModel/>
     </Window.DataContext>
     <StackPanel>
         <StackPanel Orientation="Horizontal">

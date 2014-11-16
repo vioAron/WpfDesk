@@ -1,8 +1,10 @@
 ﻿using System;
+using PropertyChanged;
 using WpfDesk.Model;
 
 namespace WpfDesk.ViewModel
 {
+    [ImplementPropertyChanged]
     public class AccountViewModel
     {
         private readonly Account _account;

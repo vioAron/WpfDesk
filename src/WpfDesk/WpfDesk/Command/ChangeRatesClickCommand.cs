@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
-using WpfDesk.ViewModel;
+using WpfDesk.View;
 
 namespace WpfDesk.Command
 {
-    public class AddClientCommand : ICommand
+    public class ChangeRatesClickCommand : ICommand
     {
         public bool CanExecute(object parameter)
         {
@@ -13,9 +17,8 @@ namespace WpfDesk.Command
 
         public void Execute(object parameter)
         {
-            var viewModel = (AddClientViewModel) parameter;
-
-            //viewModel.AddClient();
+            var view = new ChangeRatesWindow();
+            view.Show();
         }
 
         public event EventHandler CanExecuteChanged;
