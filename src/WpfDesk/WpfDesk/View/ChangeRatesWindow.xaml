@@ -46,16 +46,18 @@
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Button Height="150" Width="150" Background="{DynamicResource AccentColorBrush2}" Margin="2" Click="ButtonBase_OnClick">
+                    <Button Height="150" Width="150" Background="{DynamicResource AccentColorBrush}" Margin="2" Click="ButtonBase_OnClick">
                         <ContentControl>
                             <StackPanel>
                                 <TextBlock Foreground="{DynamicResource IdealForegroundColorBrush}">USD/EUR</TextBlock>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock>
-                                        <Run Foreground="{DynamicResource WhiteColorBrush}">Buy:</Run>
-                                        <Run Foreground="{DynamicResource BlackColorBrush}">2.3456</Run>
-                                    </TextBlock>
-                                </StackPanel>
+                                <TextBlock>
+                                    <Run Foreground="{DynamicResource WhiteColorBrush}">Buy:</Run>
+                                    <Run Foreground="{DynamicResource BlackColorBrush}">2.3456</Run>
+                                </TextBlock>
+                                <TextBlock>
+                                    <Run Foreground="{DynamicResource WhiteColorBrush}">Sale:</Run>
+                                    <Run Foreground="{DynamicResource BlackColorBrush}">0.129</Run>
+                                </TextBlock>
                             </StackPanel>
                         </ContentControl>
                     </Button>

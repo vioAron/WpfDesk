@@ -4,7 +4,7 @@
         xmlns:viewModel="clr-namespace:WpfDesk.ViewModel"
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" x:Class="WpfDesk.MainWindow"
     xmlns:media="System.Windows.Input.MediaCommands"
-        Title="WpfDesk" Height="350" Width="525">
+        Title="WpfDesk" Height="424.4" Width="525">
     <Window.Resources>
         <ResourceDictionary>
         <Style x:Key="AppThemeMenuItemStyle"
@@ -57,13 +57,13 @@
             </Menu>
             <StackPanel Orientation="Horizontal" Grid.Row="1">
                 <StackPanel>
-                    <Button Content="Clients" HorizontalAlignment="Left" Margin="20" VerticalAlignment="Top" Width="75" 
+                    <Button Content="Clients" HorizontalAlignment="Left" Margin="20" VerticalAlignment="Top" Width="100" 
                     Command="{Binding Path=ClientsClickCommand}" CommandParameter="{Binding}"/>
-                    <Button Content="Add Client" HorizontalAlignment="Left" Margin="20" VerticalAlignment="Top" Width="75" 
+                    <Button Content="Add Client" HorizontalAlignment="Left" Margin="20" VerticalAlignment="Top" Width="100" 
                     Command="{Binding Path=AddClientClickCommand}" CommandParameter="{Binding}"/>
-                    <Button Content="Change Rates" HorizontalAlignment="Left" Margin="20" VerticalAlignment="Top" Width="75" 
+                    <Button Content="Change Rates" HorizontalAlignment="Left" Margin="20" VerticalAlignment="Top" Width="100" 
                     Command="{Binding Path=ChangeRatesClickCommand}" CommandParameter="{Binding}"/>
-                    <Button Content="Close" HorizontalAlignment="Left" Margin="20" VerticalAlignment="Top" Width="75"
+                    <Button Content="Close" HorizontalAlignment="Left" Margin="20" VerticalAlignment="Top" Width="100"
                     Command="{Binding CloseCommand}" CommandParameter="{Binding}"/>
                     <Button Width="100" Height="30" Margin="10" Template="{StaticResource CustomButtonTemplate}">Button Template in action</Button>
                     <StackPanel Orientation="Horizontal">
