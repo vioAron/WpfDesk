@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System.CodeDom;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using MahApps.Metro;
 using WpfDesk.Command;
+using WpfDesk.Data;
 using WpfDesk.View;
 
 namespace WpfDesk.ViewModel
@@ -25,7 +27,7 @@ namespace WpfDesk.ViewModel
         protected virtual void DoChangeTheme(object sender)
         {
             var theme = ThemeManager.DetectAppStyle(Application.Current);
-            var accent = ThemeManager.GetAccent(this.Name);
+            var accent = ThemeManager.GetAccent(Name);
             ThemeManager.ChangeAppStyle(Application.Current, accent, theme.Item1);
         }
     }
@@ -83,6 +85,16 @@ namespace WpfDesk.ViewModel
         public ICommand ChangeRatesClickCommand
         {
             get { return new ChangeRatesClickCommand(); }
+        }
+
+        public string DbText
+        {
+            get
+            {
+                return MyDataRepository.Read();
+                
+                return new MyDataRepository().TaskCompletionSource.Task.Result;
+            }
         }
 
         public void ShowClients()

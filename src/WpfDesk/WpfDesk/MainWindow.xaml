@@ -78,7 +78,9 @@
                         <MenuItem Command="Paste"></MenuItem>
                     </Menu>
                     <TextBox/>
+                    <TextBlock TextWrapping="Wrap" Text="{Binding DbText}" Width="200"/>
                 </StackPanel>
+                
                 <!--controls:ClientUserControl Width="100" Background="AntiqueWhite">
             <controls:ClientUserControl.Client>Id111,Id111_IsGreat!</controls:ClientUserControl.Client>
         </controls:ClientUserControl-->

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<clients>
+  <client Id="client1" Description="great client1">
+    <accounts>
+      <account Id="account1_1" Description="great acc1"></account>
+      <account Id="account1_2" Description="great acc2"></account>
+      <account Id="account1_2" Description="great acc3"></account>
+    </accounts>
+  </client>
+</clients>

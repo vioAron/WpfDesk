@@ -76,6 +76,7 @@
     <Compile Include="Controls\ClientUserControl.xaml.cs">
       <DependentUpon>ClientUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\MyDataRepository.cs" />
     <Compile Include="Model\Account.cs" />
     <Compile Include="MVVM.Infrastructure\ViewModelBase.cs" />
     <Compile Include="TypeConverters\ClientTypeConverter.cs" />
@@ -198,6 +199,11 @@
     <Resource Include="FodyWeavers.xml">
       <SubType>Designer</SubType>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\MyDb.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.1.26.1\build\Fody.targets" Condition="Exists('..\packages\Fody.1.26.1\build\Fody.targets')" />
