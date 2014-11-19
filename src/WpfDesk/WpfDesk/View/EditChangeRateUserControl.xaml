@@ -27,7 +27,7 @@
                 <controls:NumericUpDown Margin="0,5" Grid.Column="1"/>
                 <TextBlock Grid.Column="0" Grid.Row="1" Margin="0,5" Foreground="{DynamicResource AccentColorBrush}">Sale:</TextBlock>
                 <controls:NumericUpDown Grid.Column="1" Margin="0,5" Grid.Row="1"/>
-                <Button Name="SaveButton" Content="Save" Margin="0,5" Grid.Row="2" Grid.ColumnSpan="2" />
+                <Button Name="SaveButton" Content="Save" Margin="0,5" Grid.Row="2" Width="70" HorizontalAlignment="Right" Grid.ColumnSpan="2" />
             </Grid>
         </StackPanel>
     </Grid>
