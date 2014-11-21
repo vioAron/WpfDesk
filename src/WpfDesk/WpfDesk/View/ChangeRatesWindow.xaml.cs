@@ -33,5 +33,11 @@ namespace WpfDesk.View
                 EditChangeRateFlyout.IsOpen = false;
             }, TaskScheduler.FromCurrentSynchronizationContext());
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new AddChangeRateWindow();
+            window.Show();
+        }
     }
 }

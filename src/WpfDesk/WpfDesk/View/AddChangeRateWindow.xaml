@@ -1,0 +1,75 @@
+﻿<Window x:Class="WpfDesk.View.AddChangeRateWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             mc:Ignorable="d" Height="385" Width="357">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <Style x:Key="MetroComboBoxWithTransparentBackground" TargetType="{x:Type ComboBox}" BasedOn="{StaticResource MetroComboBox}">
+                        <Setter Property="Background" Value="Transparent"/>
+                    </Style>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid Name="OverlayGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                          Panel.ZIndex="1000" Visibility="Collapsed" Background="{DynamicResource BlackColorBrush}" Opacity="0.7">
+            <controls:ProgressRing Name="ProgressRing" IsActive="True" />
+        </Grid>
+        <StackPanel Width="250">
+            <Grid Margin="20,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <GroupBox Grid.Row="0" Header="Currencies" Style="{DynamicResource MetroGroupBox}" Margin="0,10,0,10">
+                    <StackPanel>
+                        <ComboBox Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource MetroComboBoxWithTransparentBackground}"
+                      controls:TextboxHelper.ClearTextButton="True"
+                          IsEditable="True"
+                          controls:TextboxHelper.Watermark="Currency1"
+                      Margin="0, 10, 0, 0">
+                            <ComboBoxItem Content="USD" />
+                            <ComboBoxItem Content="EUR" />
+                            <ComboBoxItem Content="Ron" />
+                            <ComboBoxItem Content="CHR" />
+                        </ComboBox>
+                        <ComboBox Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource MetroComboBoxWithTransparentBackground}"
+                      controls:TextboxHelper.ClearTextButton="True"
+                          IsEditable="True"
+                          controls:TextboxHelper.Watermark="Currency2"
+                      Margin="0, 10, 0, 10">
+                            <ComboBoxItem Content="USD" />
+                            <ComboBoxItem Content="EUR" />
+                            <ComboBoxItem Content="Ron" />
+                            <ComboBoxItem Content="CHR" />
+                        </ComboBox>
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox Grid.Row="1" Header="FX Rates" Margin="0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" MinWidth="25" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Margin="0,5" Grid.Row="0" Grid.Column="0" Foreground="{DynamicResource AccentColorBrush}">Buy:</TextBlock>
+                        <controls:NumericUpDown Grid.Row="0" Margin="0,5" Grid.Column="1"/>
+                        <TextBlock Grid.Column="0" Grid.Row="1" Margin="0,5" Foreground="{DynamicResource AccentColorBrush}">Sale:</TextBlock>
+                        <controls:NumericUpDown Grid.Row="1" Grid.Column="1" Margin="0,5"/>
+                    </Grid>
+                </GroupBox>
+                <Button Name="SaveButton" Content="Save" Margin="0,5" Grid.Row="2" Width="70" HorizontalAlignment="Right" Grid.ColumnSpan="2" />
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>
